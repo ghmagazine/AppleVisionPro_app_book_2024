@@ -1,0 +1,82 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Sphere "Sphere" (
+        active = true
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Root/Sphere/DefaultMaterial>
+        double radius = 0.1
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "DefaultMaterial"
+        {
+            token outputs:mtlx:surface.connect = </Root/Sphere/DefaultMaterial/UnlitSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/Sphere/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+
+            def Shader "DefaultSurfaceShader" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (1, 1, 1)
+                float inputs:metallic = 0.5
+                float inputs:roughness = 0
+                token outputs:surface
+            }
+
+            def Shader "UnlitSurface"
+            {
+                uniform token info:id = "ND_realitykit_unlit_surfaceshader"
+                bool inputs:applyPostProcessToneMap
+                color3f inputs:color.connect = </Root/Sphere/DefaultMaterial/Add.outputs:out>
+                bool inputs:hasPremultipliedAlpha
+                float inputs:opacity
+                float inputs:opacityThreshold
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (-232.34766, 55.359375)
+                float2 ui:nodegraph:node:size = (194.5, 181)
+                int ui:nodegraph:node:stackingOrder = 3
+            }
+
+            def Shader "RealitykitEnvironmentRadiance"
+            {
+                uniform token info:id = "ND_realitykit_environment_radiance"
+                half inputs:metallic = 0.5
+                float3 inputs:normal
+                half inputs:specular = 1
+                color3f outputs:diffuseRadiance
+                color3f outputs:specularRadiance
+                float2 ui:nodegraph:node:pos = (-622.3511, 30.238281)
+                float2 ui:nodegraph:node:size = (244.5, 199)
+                int ui:nodegraph:node:stackingOrder = 17
+            }
+
+            def Shader "Add"
+            {
+                uniform token info:id = "ND_add_color3"
+                color3f inputs:in1.connect = </Root/Sphere/DefaultMaterial/RealitykitEnvironmentRadiance.outputs:diffuseRadiance>
+                color3f inputs:in2.connect = </Root/Sphere/DefaultMaterial/RealitykitEnvironmentRadiance.outputs:specularRadiance>
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (-405.59375, 101.53516)
+                float2 ui:nodegraph:node:size = (61.5, 36.5)
+                int ui:nodegraph:node:stackingOrder = 16
+            }
+        }
+    }
+}
+

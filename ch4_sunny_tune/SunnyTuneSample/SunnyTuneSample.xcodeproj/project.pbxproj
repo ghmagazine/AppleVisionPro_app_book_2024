@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8152429A2BB29A110011E5D7 /* WindowSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815242992BB29A110011E5D7 /* WindowSizeView.swift */; };
+		817F33A12B6A358D007A9383 /* LSystemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F33A02B6A358D007A9383 /* LSystemEntity.swift */; };
+		817F33A32B6A35C7007A9383 /* LSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F33A22B6A35C7007A9383 /* LSystem.swift */; };
+		81A954632B61081000B20BA8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 81A954622B61081000B20BA8 /* RealityKitContent */; };
+		81A954652B61081000B20BA8 /* SunnyTuneSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */; };
+		81A954672B61081000B20BA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954662B61081000B20BA8 /* ContentView.swift */; };
+		81A9546B2B61081100B20BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A9546A2B61081100B20BA8 /* Assets.xcassets */; };
+		81A9546E2B61081100B20BA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */; };
+		81A954792B61081100B20BA8 /* SunnyTuneSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */; };
+		81E525902B69DF25001C5F32 /* Sorlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5258F2B69DF25001C5F32 /* Sorlar.swift */; };
+		81E525922B69E329001C5F32 /* SunnyTuneSampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */; };
+		81E525942B69E49B001C5F32 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E525932B69E49B001C5F32 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81A954752B61081100B20BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81A954552B61081000B20BA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81A9545C2B61081000B20BA8;
+			remoteInfo = SunnyTuneSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		815242992BB29A110011E5D7 /* WindowSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSizeView.swift; sourceTree = "<group>"; };
+		817F33A02B6A358D007A9383 /* LSystemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystemEntity.swift; sourceTree = "<group>"; };
+		817F33A22B6A35C7007A9383 /* LSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystem.swift; sourceTree = "<group>"; };
+		81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyTuneSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A954612B61081000B20BA8 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleApp.swift; sourceTree = "<group>"; };
+		81A954662B61081000B20BA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81A9546A2B61081100B20BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81A9546F2B61081100B20BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyTuneSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleTests.swift; sourceTree = "<group>"; };
+		81E5258F2B69DF25001C5F32 /* Sorlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorlar.swift; sourceTree = "<group>"; };
+		81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleModel.swift; sourceTree = "<group>"; };
+		81E525932B69E49B001C5F32 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81A9545A2B61081000B20BA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A954632B61081000B20BA8 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A954712B61081100B20BA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81A954542B61081000B20BA8 = {
+			isa = PBXGroup;
+			children = (
+				81A9545F2B61081000B20BA8 /* SunnyTuneSample */,
+				81A954772B61081100B20BA8 /* SunnyTuneSampleTests */,
+				81A9545E2B61081000B20BA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81A9545E2B61081000B20BA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */,
+				81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81A9545F2B61081000B20BA8 /* SunnyTuneSample */ = {
+			isa = PBXGroup;
+			children = (
+				81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */,
+				81E525932B69E49B001C5F32 /* Extensions.swift */,
+				81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */,
+				81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */,
+				815242992BB29A110011E5D7 /* WindowSizeView.swift */,
+				81A954662B61081000B20BA8 /* ContentView.swift */,
+				81E5258F2B69DF25001C5F32 /* Sorlar.swift */,
+				817F33A02B6A358D007A9383 /* LSystemEntity.swift */,
+				817F33A22B6A35C7007A9383 /* LSystem.swift */,
+				81A9546A2B61081100B20BA8 /* Assets.xcassets */,
+				81A9546F2B61081100B20BA8 /* Info.plist */,
+				81A9546C2B61081100B20BA8 /* Preview Content */,
+				81A954602B61081000B20BA8 /* Packages */,
+			);
+			path = SunnyTuneSample;
+			sourceTree = "<group>";
+		};
+		81A954602B61081000B20BA8 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				81A954612B61081000B20BA8 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		81A9546C2B61081100B20BA8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		81A954772B61081100B20BA8 /* SunnyTuneSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */,
+			);
+			path = SunnyTuneSampleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81A9545C2B61081000B20BA8 /* SunnyTuneSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81A9547C2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */;
+			buildPhases = (
+				81A954592B61081000B20BA8 /* Sources */,
+				81A9545A2B61081000B20BA8 /* Frameworks */,
+				81A9545B2B61081000B20BA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunnyTuneSample;
+			packageProductDependencies = (
+				81A954622B61081000B20BA8 /* RealityKitContent */,
+			);
+			productName = SunnyTuneSample;
+			productReference = 81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		81A954732B61081100B20BA8 /* SunnyTuneSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81A9547F2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */;
+			buildPhases = (
+				81A954702B61081100B20BA8 /* Sources */,
+				81A954712B61081100B20BA8 /* Frameworks */,
+				81A954722B61081100B20BA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81A954762B61081100B20BA8 /* PBXTargetDependency */,
+			);
+			name = SunnyTuneSampleTests;
+			productName = SunnyTuneSampleTests;
+			productReference = 81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81A954552B61081000B20BA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					81A9545C2B61081000B20BA8 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					81A954732B61081100B20BA8 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 81A9545C2B61081000B20BA8;
+					};
+				};
+			};
+			buildConfigurationList = 81A954582B61081000B20BA8 /* Build configuration list for PBXProject "SunnyTuneSample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81A954542B61081000B20BA8;
+			productRefGroup = 81A9545E2B61081000B20BA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81A9545C2B61081000B20BA8 /* SunnyTuneSample */,
+				81A954732B61081100B20BA8 /* SunnyTuneSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81A9545B2B61081000B20BA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A9546E2B61081100B20BA8 /* Preview Assets.xcassets in Resources */,
+				81A9546B2B61081100B20BA8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A954722B61081100B20BA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81A954592B61081000B20BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81E525942B69E49B001C5F32 /* Extensions.swift in Sources */,
+				81E525922B69E329001C5F32 /* SunnyTuneSampleModel.swift in Sources */,
+				81E525902B69DF25001C5F32 /* Sorlar.swift in Sources */,
+				817F33A12B6A358D007A9383 /* LSystemEntity.swift in Sources */,
+				81A954672B61081000B20BA8 /* ContentView.swift in Sources */,
+				8152429A2BB29A110011E5D7 /* WindowSizeView.swift in Sources */,
+				81A954652B61081000B20BA8 /* SunnyTuneSampleApp.swift in Sources */,
+				817F33A32B6A35C7007A9383 /* LSystem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81A954702B61081100B20BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81A954792B61081100B20BA8 /* SunnyTuneSampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81A954762B61081100B20BA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81A9545C2B61081000B20BA8 /* SunnyTuneSample */;
+			targetProxy = 81A954752B61081100B20BA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		81A9547A2B61081100B20BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		81A9547B2B61081100B20BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		81A9547D2B61081100B20BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SunnyTuneSample/Preview Content\"";
+				DEVELOPMENT_TEAM = 9WD5876MRD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		81A9547E2B61081100B20BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SunnyTuneSample/Preview Content\"";
+				DEVELOPMENT_TEAM = 9WD5876MRD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		81A954802B61081100B20BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9WD5876MRD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyTuneSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SunnyTuneSample";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		81A954812B61081100B20BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9WD5876MRD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyTuneSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SunnyTuneSample";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81A954582B61081000B20BA8 /* Build configuration list for PBXProject "SunnyTuneSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A9547A2B61081100B20BA8 /* Debug */,
+				81A9547B2B61081100B20BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81A9547C2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A9547D2B61081100B20BA8 /* Debug */,
+				81A9547E2B61081100B20BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81A9547F2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81A954802B61081100B20BA8 /* Debug */,
+				81A954812B61081100B20BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		81A954622B61081000B20BA8 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 81A954552B61081000B20BA8 /* Project object */;
+}
