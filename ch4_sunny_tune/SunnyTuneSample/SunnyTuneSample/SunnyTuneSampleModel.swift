@@ -119,10 +119,12 @@ class SunnyTuneSampleModel : ObservableObject {
 
         // 天体の回転
         let sunPosition = Sorlar.getSunPosition(date: now, location: location, timezone: timezone)
-        var rotation = simd_quatf(angle: Float(sunPosition.azimuth.radians), axis: [0,1,0])
-        rotation *= simd_quatf(angle: Float(sunPosition.altitude.radians), axis: [1,0,0])
-        
-        celestialBody!.transform.rotation = rotation
+        // 方位角はY軸回転
+        let rotationY = simd_quatf(angle: Float(sunPosition.azimuth.radians), axis: [0,1,0])
+        // 高度はX軸回転
+        let rotationX = simd_quatf(angle: Float(sunPosition.altitude.radians), axis: [1,0,0])
+        // 天体を方位角と高度で回転させる
+        celestialBody!.transform.rotation = rotationY * rotationX
         
         // シェーダーに渡す用の-1~1までのTimeパラメータを取得
         let time = Float(getTime(now:now, sunrise:sunrise, sunset:sunset))

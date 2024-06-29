@@ -33,10 +33,10 @@ class EmbeddedModel {
 class LSystemEntity: Entity {
     
     struct Node {
-        var startIndex: UInt32
-        var center: SIMD3<Float>
-        var angles: SIMD3<Float>
-        var thickness: Float
+        var startIndex: UInt32 // 頂点開始インデックス
+        var center: SIMD3<Float> // 中心位置
+        var angles: SIMD3<Float> // 角度
+        var thickness: Float // 太さ
     }
     
     public var growLength:Float = 0.02
@@ -68,13 +68,16 @@ class LSystemEntity: Entity {
     
     /// モデルの更新処理
     private func updateModel() async throws {
-
+        // L-systemのシンボルに合わせてメッシュを作成
         let mesh = try await generateMesh()
         
+        // モデルを作っていたければ新しく作成する
         if self.model == nil {
             self.model = ModelEntity(mesh:mesh, materials: [self.material!])
             self.model?.setParent(self)
-        } else {
+        }
+        // すでにモデルがある場合はモデルのメッシュを差し替える
+        else {
             if let modelComponent = self.model?.components[ModelComponent.self] {
                 try await modelComponent.mesh.replace(with: mesh.contents)
             }
@@ -187,7 +190,7 @@ class LSystemEntity: Entity {
             let z:Float = cos * node.thickness
             let y:Float = length
             
-            // 回転を加えて前回の中心位置に足して位置を決める
+            // 回転を加えた後、前回の中心位置に足して位置を決める
             let position = rotation.act([x,y,z])
             positions.append(node.center + position)
             
