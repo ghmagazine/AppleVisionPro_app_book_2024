@@ -3,62 +3,62 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8152429A2BB29A110011E5D7 /* WindowSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815242992BB29A110011E5D7 /* WindowSizeView.swift */; };
-		817F33A12B6A358D007A9383 /* LSystemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F33A02B6A358D007A9383 /* LSystemEntity.swift */; };
-		817F33A32B6A35C7007A9383 /* LSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F33A22B6A35C7007A9383 /* LSystem.swift */; };
-		81A954632B61081000B20BA8 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 81A954622B61081000B20BA8 /* RealityKitContent */; };
-		81A954652B61081000B20BA8 /* SunnyTuneSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */; };
-		81A954672B61081000B20BA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954662B61081000B20BA8 /* ContentView.swift */; };
-		81A9546B2B61081100B20BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A9546A2B61081100B20BA8 /* Assets.xcassets */; };
-		81A9546E2B61081100B20BA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */; };
-		81A954792B61081100B20BA8 /* SunnyTuneSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */; };
-		81E525902B69DF25001C5F32 /* Sorlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5258F2B69DF25001C5F32 /* Sorlar.swift */; };
-		81E525922B69E329001C5F32 /* SunnyTuneSampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */; };
-		81E525942B69E49B001C5F32 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E525932B69E49B001C5F32 /* Extensions.swift */; };
+		810C555B2C2FA6B000DFA7DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C55552C2FA6B000DFA7DA /* Extensions.swift */; };
+		810C555C2C2FA6B000DFA7DA /* LSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C55562C2FA6B000DFA7DA /* LSystem.swift */; };
+		810C555D2C2FA6B000DFA7DA /* SunnyTuneSampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C55592C2FA6B000DFA7DA /* SunnyTuneSampleModel.swift */; };
+		810C555E2C2FA6B000DFA7DA /* LSystemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C55572C2FA6B000DFA7DA /* LSystemEntity.swift */; };
+		810C555F2C2FA6B000DFA7DA /* Sorlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C55582C2FA6B000DFA7DA /* Sorlar.swift */; };
+		810C55602C2FA6B000DFA7DA /* WindowSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C555A2C2FA6B000DFA7DA /* WindowSizeView.swift */; };
+		81260B5C2C2FA61E006DC2EB /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 81260B5B2C2FA61E006DC2EB /* RealityKitContent */; };
+		81260B5E2C2FA61E006DC2EB /* SunnyTuneSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81260B5D2C2FA61E006DC2EB /* SunnyTuneSampleApp.swift */; };
+		81260B602C2FA61E006DC2EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81260B5F2C2FA61E006DC2EB /* ContentView.swift */; };
+		81260B682C2FA61F006DC2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81260B672C2FA61F006DC2EB /* Assets.xcassets */; };
+		81260B6B2C2FA61F006DC2EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81260B6A2C2FA61F006DC2EB /* Preview Assets.xcassets */; };
+		81260B762C2FA61F006DC2EB /* SunnyTuneSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81260B752C2FA61F006DC2EB /* SunnyTuneSampleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		81A954752B61081100B20BA8 /* PBXContainerItemProxy */ = {
+		81260B722C2FA61F006DC2EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81A954552B61081000B20BA8 /* Project object */;
+			containerPortal = 81260B4E2C2FA61E006DC2EB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 81A9545C2B61081000B20BA8;
+			remoteGlobalIDString = 81260B552C2FA61E006DC2EB;
 			remoteInfo = SunnyTuneSample;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		815242992BB29A110011E5D7 /* WindowSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSizeView.swift; sourceTree = "<group>"; };
-		817F33A02B6A358D007A9383 /* LSystemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystemEntity.swift; sourceTree = "<group>"; };
-		817F33A22B6A35C7007A9383 /* LSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystem.swift; sourceTree = "<group>"; };
-		81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyTuneSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		81A954612B61081000B20BA8 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
-		81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleApp.swift; sourceTree = "<group>"; };
-		81A954662B61081000B20BA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		81A9546A2B61081100B20BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		81A9546F2B61081100B20BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyTuneSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleTests.swift; sourceTree = "<group>"; };
-		81E5258F2B69DF25001C5F32 /* Sorlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorlar.swift; sourceTree = "<group>"; };
-		81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleModel.swift; sourceTree = "<group>"; };
-		81E525932B69E49B001C5F32 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		810C55552C2FA6B000DFA7DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		810C55562C2FA6B000DFA7DA /* LSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystem.swift; sourceTree = "<group>"; };
+		810C55572C2FA6B000DFA7DA /* LSystemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSystemEntity.swift; sourceTree = "<group>"; };
+		810C55582C2FA6B000DFA7DA /* Sorlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorlar.swift; sourceTree = "<group>"; };
+		810C55592C2FA6B000DFA7DA /* SunnyTuneSampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleModel.swift; sourceTree = "<group>"; };
+		810C555A2C2FA6B000DFA7DA /* WindowSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSizeView.swift; sourceTree = "<group>"; };
+		81260B562C2FA61E006DC2EB /* SunnyTuneSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyTuneSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81260B5A2C2FA61E006DC2EB /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		81260B5D2C2FA61E006DC2EB /* SunnyTuneSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleApp.swift; sourceTree = "<group>"; };
+		81260B5F2C2FA61E006DC2EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81260B672C2FA61F006DC2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81260B6A2C2FA61F006DC2EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81260B6C2C2FA61F006DC2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81260B712C2FA61F006DC2EB /* SunnyTuneSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyTuneSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81260B752C2FA61F006DC2EB /* SunnyTuneSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunnyTuneSampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		81A9545A2B61081000B20BA8 /* Frameworks */ = {
+		81260B532C2FA61E006DC2EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A954632B61081000B20BA8 /* RealityKitContent in Frameworks */,
+				81260B5C2C2FA61E006DC2EB /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81A954712B61081100B20BA8 /* Frameworks */ = {
+		81260B6E2C2FA61F006DC2EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,63 +68,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81A954542B61081000B20BA8 = {
+		81260B4D2C2FA61E006DC2EB = {
 			isa = PBXGroup;
 			children = (
-				81A9545F2B61081000B20BA8 /* SunnyTuneSample */,
-				81A954772B61081100B20BA8 /* SunnyTuneSampleTests */,
-				81A9545E2B61081000B20BA8 /* Products */,
+				81260B582C2FA61E006DC2EB /* SunnyTuneSample */,
+				81260B592C2FA61E006DC2EB /* Packages */,
+				81260B742C2FA61F006DC2EB /* SunnyTuneSampleTests */,
+				81260B572C2FA61E006DC2EB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		81A9545E2B61081000B20BA8 /* Products */ = {
+		81260B572C2FA61E006DC2EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */,
-				81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */,
+				81260B562C2FA61E006DC2EB /* SunnyTuneSample.app */,
+				81260B712C2FA61F006DC2EB /* SunnyTuneSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81A9545F2B61081000B20BA8 /* SunnyTuneSample */ = {
+		81260B582C2FA61E006DC2EB /* SunnyTuneSample */ = {
 			isa = PBXGroup;
 			children = (
-				81A9546D2B61081100B20BA8 /* Preview Assets.xcassets */,
-				81E525932B69E49B001C5F32 /* Extensions.swift */,
-				81A954642B61081000B20BA8 /* SunnyTuneSampleApp.swift */,
-				81E525912B69E329001C5F32 /* SunnyTuneSampleModel.swift */,
-				815242992BB29A110011E5D7 /* WindowSizeView.swift */,
-				81A954662B61081000B20BA8 /* ContentView.swift */,
-				81E5258F2B69DF25001C5F32 /* Sorlar.swift */,
-				817F33A02B6A358D007A9383 /* LSystemEntity.swift */,
-				817F33A22B6A35C7007A9383 /* LSystem.swift */,
-				81A9546A2B61081100B20BA8 /* Assets.xcassets */,
-				81A9546F2B61081100B20BA8 /* Info.plist */,
-				81A9546C2B61081100B20BA8 /* Preview Content */,
-				81A954602B61081000B20BA8 /* Packages */,
+				810C55552C2FA6B000DFA7DA /* Extensions.swift */,
+				810C55562C2FA6B000DFA7DA /* LSystem.swift */,
+				810C55572C2FA6B000DFA7DA /* LSystemEntity.swift */,
+				810C55582C2FA6B000DFA7DA /* Sorlar.swift */,
+				810C55592C2FA6B000DFA7DA /* SunnyTuneSampleModel.swift */,
+				810C555A2C2FA6B000DFA7DA /* WindowSizeView.swift */,
+				81260B5D2C2FA61E006DC2EB /* SunnyTuneSampleApp.swift */,
+				81260B5F2C2FA61E006DC2EB /* ContentView.swift */,
+				81260B672C2FA61F006DC2EB /* Assets.xcassets */,
+				81260B6C2C2FA61F006DC2EB /* Info.plist */,
+				81260B692C2FA61F006DC2EB /* Preview Content */,
 			);
 			path = SunnyTuneSample;
 			sourceTree = "<group>";
 		};
-		81A954602B61081000B20BA8 /* Packages */ = {
+		81260B592C2FA61E006DC2EB /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				81A954612B61081000B20BA8 /* RealityKitContent */,
+				81260B5A2C2FA61E006DC2EB /* RealityKitContent */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		81A9546C2B61081100B20BA8 /* Preview Content */ = {
+		81260B692C2FA61F006DC2EB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				81260B6A2C2FA61F006DC2EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		81A954772B61081100B20BA8 /* SunnyTuneSampleTests */ = {
+		81260B742C2FA61F006DC2EB /* SunnyTuneSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				81A954782B61081100B20BA8 /* SunnyTuneSampleTests.swift */,
+				81260B752C2FA61F006DC2EB /* SunnyTuneSampleTests.swift */,
 			);
 			path = SunnyTuneSampleTests;
 			sourceTree = "<group>";
@@ -132,13 +132,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		81A9545C2B61081000B20BA8 /* SunnyTuneSample */ = {
+		81260B552C2FA61E006DC2EB /* SunnyTuneSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81A9547C2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */;
+			buildConfigurationList = 81260B792C2FA61F006DC2EB /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */;
 			buildPhases = (
-				81A954592B61081000B20BA8 /* Sources */,
-				81A9545A2B61081000B20BA8 /* Frameworks */,
-				81A9545B2B61081000B20BA8 /* Resources */,
+				81260B522C2FA61E006DC2EB /* Sources */,
+				81260B532C2FA61E006DC2EB /* Frameworks */,
+				81260B542C2FA61E006DC2EB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -146,79 +146,79 @@
 			);
 			name = SunnyTuneSample;
 			packageProductDependencies = (
-				81A954622B61081000B20BA8 /* RealityKitContent */,
+				81260B5B2C2FA61E006DC2EB /* RealityKitContent */,
 			);
 			productName = SunnyTuneSample;
-			productReference = 81A9545D2B61081000B20BA8 /* SunnyTuneSample.app */;
+			productReference = 81260B562C2FA61E006DC2EB /* SunnyTuneSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		81A954732B61081100B20BA8 /* SunnyTuneSampleTests */ = {
+		81260B702C2FA61F006DC2EB /* SunnyTuneSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81A9547F2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */;
+			buildConfigurationList = 81260B7C2C2FA61F006DC2EB /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */;
 			buildPhases = (
-				81A954702B61081100B20BA8 /* Sources */,
-				81A954712B61081100B20BA8 /* Frameworks */,
-				81A954722B61081100B20BA8 /* Resources */,
+				81260B6D2C2FA61F006DC2EB /* Sources */,
+				81260B6E2C2FA61F006DC2EB /* Frameworks */,
+				81260B6F2C2FA61F006DC2EB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				81A954762B61081100B20BA8 /* PBXTargetDependency */,
+				81260B732C2FA61F006DC2EB /* PBXTargetDependency */,
 			);
 			name = SunnyTuneSampleTests;
 			productName = SunnyTuneSampleTests;
-			productReference = 81A954742B61081100B20BA8 /* SunnyTuneSampleTests.xctest */;
+			productReference = 81260B712C2FA61F006DC2EB /* SunnyTuneSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		81A954552B61081000B20BA8 /* Project object */ = {
+		81260B4E2C2FA61E006DC2EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					81A9545C2B61081000B20BA8 = {
-						CreatedOnToolsVersion = 15.2;
+					81260B552C2FA61E006DC2EB = {
+						CreatedOnToolsVersion = 16.0;
 					};
-					81A954732B61081100B20BA8 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 81A9545C2B61081000B20BA8;
+					81260B702C2FA61F006DC2EB = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 81260B552C2FA61E006DC2EB;
 					};
 				};
 			};
-			buildConfigurationList = 81A954582B61081000B20BA8 /* Build configuration list for PBXProject "SunnyTuneSample" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 81260B512C2FA61E006DC2EB /* Build configuration list for PBXProject "SunnyTuneSample" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 81A954542B61081000B20BA8;
-			productRefGroup = 81A9545E2B61081000B20BA8 /* Products */;
+			mainGroup = 81260B4D2C2FA61E006DC2EB;
+			productRefGroup = 81260B572C2FA61E006DC2EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				81A9545C2B61081000B20BA8 /* SunnyTuneSample */,
-				81A954732B61081100B20BA8 /* SunnyTuneSampleTests */,
+				81260B552C2FA61E006DC2EB /* SunnyTuneSample */,
+				81260B702C2FA61F006DC2EB /* SunnyTuneSampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		81A9545B2B61081000B20BA8 /* Resources */ = {
+		81260B542C2FA61E006DC2EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A9546E2B61081100B20BA8 /* Preview Assets.xcassets in Resources */,
-				81A9546B2B61081100B20BA8 /* Assets.xcassets in Resources */,
+				81260B6B2C2FA61F006DC2EB /* Preview Assets.xcassets in Resources */,
+				81260B682C2FA61F006DC2EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81A954722B61081100B20BA8 /* Resources */ = {
+		81260B6F2C2FA61F006DC2EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,41 +228,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		81A954592B61081000B20BA8 /* Sources */ = {
+		81260B522C2FA61E006DC2EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E525942B69E49B001C5F32 /* Extensions.swift in Sources */,
-				81E525922B69E329001C5F32 /* SunnyTuneSampleModel.swift in Sources */,
-				81E525902B69DF25001C5F32 /* Sorlar.swift in Sources */,
-				817F33A12B6A358D007A9383 /* LSystemEntity.swift in Sources */,
-				81A954672B61081000B20BA8 /* ContentView.swift in Sources */,
-				8152429A2BB29A110011E5D7 /* WindowSizeView.swift in Sources */,
-				81A954652B61081000B20BA8 /* SunnyTuneSampleApp.swift in Sources */,
-				817F33A32B6A35C7007A9383 /* LSystem.swift in Sources */,
+				81260B602C2FA61E006DC2EB /* ContentView.swift in Sources */,
+				81260B5E2C2FA61E006DC2EB /* SunnyTuneSampleApp.swift in Sources */,
+				810C555B2C2FA6B000DFA7DA /* Extensions.swift in Sources */,
+				810C555C2C2FA6B000DFA7DA /* LSystem.swift in Sources */,
+				810C555D2C2FA6B000DFA7DA /* SunnyTuneSampleModel.swift in Sources */,
+				810C555E2C2FA6B000DFA7DA /* LSystemEntity.swift in Sources */,
+				810C555F2C2FA6B000DFA7DA /* Sorlar.swift in Sources */,
+				810C55602C2FA6B000DFA7DA /* WindowSizeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81A954702B61081100B20BA8 /* Sources */ = {
+		81260B6D2C2FA61F006DC2EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A954792B61081100B20BA8 /* SunnyTuneSampleTests.swift in Sources */,
+				81260B762C2FA61F006DC2EB /* SunnyTuneSampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		81A954762B61081100B20BA8 /* PBXTargetDependency */ = {
+		81260B732C2FA61F006DC2EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 81A9545C2B61081000B20BA8 /* SunnyTuneSample */;
-			targetProxy = 81A954752B61081100B20BA8 /* PBXContainerItemProxy */;
+			target = 81260B552C2FA61E006DC2EB /* SunnyTuneSample */;
+			targetProxy = 81260B722C2FA61F006DC2EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		81A9547A2B61081100B20BA8 /* Debug */ = {
+		81260B772C2FA61F006DC2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,11 +321,11 @@
 				SDKROOT = xros;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		81A9547B2B61081100B20BA8 /* Release */ = {
+		81260B782C2FA61F006DC2EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -377,11 +377,11 @@
 				SDKROOT = xros;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		81A9547D2B61081100B20BA8 /* Debug */ = {
+		81260B7A2C2FA61F006DC2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -397,17 +397,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 			};
 			name = Debug;
 		};
-		81A9547E2B61081100B20BA8 /* Release */ = {
+		81260B7B2C2FA61F006DC2EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -423,20 +423,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.meson.SunnyTuneSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 			};
 			name = Release;
 		};
-		81A954802B61081100B20BA8 /* Debug */ = {
+		81260B7D2C2FA61F006DC2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -448,16 +447,15 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyTuneSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SunnyTuneSample";
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		81A954812B61081100B20BA8 /* Release */ = {
+		81260B7E2C2FA61F006DC2EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -469,38 +467,38 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunnyTuneSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SunnyTuneSample";
-				XROS_DEPLOYMENT_TARGET = 1.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		81A954582B61081000B20BA8 /* Build configuration list for PBXProject "SunnyTuneSample" */ = {
+		81260B512C2FA61E006DC2EB /* Build configuration list for PBXProject "SunnyTuneSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81A9547A2B61081100B20BA8 /* Debug */,
-				81A9547B2B61081100B20BA8 /* Release */,
+				81260B772C2FA61F006DC2EB /* Debug */,
+				81260B782C2FA61F006DC2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81A9547C2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */ = {
+		81260B792C2FA61F006DC2EB /* Build configuration list for PBXNativeTarget "SunnyTuneSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81A9547D2B61081100B20BA8 /* Debug */,
-				81A9547E2B61081100B20BA8 /* Release */,
+				81260B7A2C2FA61F006DC2EB /* Debug */,
+				81260B7B2C2FA61F006DC2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81A9547F2B61081100B20BA8 /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */ = {
+		81260B7C2C2FA61F006DC2EB /* Build configuration list for PBXNativeTarget "SunnyTuneSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81A954802B61081100B20BA8 /* Debug */,
-				81A954812B61081100B20BA8 /* Release */,
+				81260B7D2C2FA61F006DC2EB /* Debug */,
+				81260B7E2C2FA61F006DC2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -508,11 +506,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		81A954622B61081000B20BA8 /* RealityKitContent */ = {
+		81260B5B2C2FA61E006DC2EB /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 81A954552B61081000B20BA8 /* Project object */;
+	rootObject = 81260B4E2C2FA61E006DC2EB /* Project object */;
 }

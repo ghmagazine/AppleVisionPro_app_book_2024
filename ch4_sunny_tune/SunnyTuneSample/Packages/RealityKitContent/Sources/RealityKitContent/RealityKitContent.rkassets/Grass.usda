@@ -13,20 +13,20 @@ def Xform "Root"
     reorder nameChildren = ["Capsule", "Grass_geometry", "GrassMaterial", "SunnyDome"]
     def Material "GrassMaterial"
     {
-        float3 inputs:Wind = (3, 0, 0) (
+        float3 inputs:Wind = (1, 0, 0) (
             customData = {
                 dictionary realitykit = {
-                    float2 positionInSubgraph = (-633.3125, 101.59714)
-                    float2 sizeInSubgraph = (139, 53)
-                    int stackingOrderInSubgraph = 1437
+                    float2 positionInSubgraph = (-12.7421875, 234.6211)
+                    int stackingOrderInSubgraph = 2808
                 }
             }
         )
         prepend token outputs:mtlx:surface.connect = </Root/GrassMaterial/PreviewSurface.outputs:out>
         token outputs:realitykit:vertex.connect = </Root/GrassMaterial/GeometryModifier.outputs:out>
         token outputs:surface.connect = </Root/GrassMaterial/DefaultSurfaceShader.outputs:surface>
-        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 109.5)
+        float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (557.3042, 108.07683)
         float2 ui:nodegraph:realitykit:subgraphOutputs:size = (181.5, 99)
+        int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 1906
 
         def Shader "DefaultSurfaceShader" (
             active = false
@@ -42,30 +42,37 @@ def Xform "Root"
         {
             uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
             token outputs:out
-            float2 ui:nodegraph:node:pos = (-239.14922, 46.15489)
+            float2 ui:nodegraph:node:pos = (336.90894, 45.5989)
             float2 ui:nodegraph:node:size = (148.5, 199)
-            int ui:nodegraph:node:stackingOrder = 1444
+            int ui:nodegraph:node:stackingOrder = 2858
         }
 
         def Shader "GeometryModifier"
         {
-            uniform token info:id = "ND_realitykit_geometrymodifier_vertexshader"
+            uniform token info:id = "ND_realitykit_geometrymodifier_2_0_vertexshader"
+            float3 inputs:bitangent = (0.19364065, 0, 0)
             color4f inputs:color
-            float3 inputs:modelPositionOffset.connect = </Root/GrassMaterial/Multiply_4.outputs:out>
+            float3 inputs:modelPositionOffset.connect = </Root/GrassMaterial/Add_2.outputs:out>
             float3 inputs:normal
+            float2 inputs:uv0
+            float2 inputs:uv1
+            float4 inputs:uv2
+            float4 inputs:uv3
+            float4 inputs:uv4
+            float4 inputs:uv5 = (0, 0.039796878, 0, 0)
+            float4 inputs:uv6
+            float4 inputs:uv7
             token outputs:out
-            float2 ui:nodegraph:node:pos = (-260.69254, 328.68857)
-            float2 ui:nodegraph:node:size = (196.5, 325)
-            int ui:nodegraph:node:stackingOrder = 1377
+            float2 ui:nodegraph:node:pos = (369.29996, 387.86975)
+            int ui:nodegraph:node:stackingOrder = 3032
         }
 
         def Shader "Position"
         {
             uniform token info:id = "ND_position_vector3"
             float3 outputs:out
-            float2 ui:nodegraph:node:pos = (-1536.5436, 110.97481)
-            float2 ui:nodegraph:node:size = (133.5, 40)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-831.8047, 225.69531)
+            int ui:nodegraph:node:stackingOrder = 2852
         }
 
         def Shader "Separate3"
@@ -75,9 +82,64 @@ def Xform "Root"
             float outputs:outx
             float outputs:outy
             float outputs:outz
-            float2 ui:nodegraph:node:pos = (-1375.7228, 115.781006)
-            float2 ui:nodegraph:node:size = (115.5, 145)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-659.6953, 226.34375)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "WaveScale"
+        {
+            uniform token info:id = "ND_constant_float"
+            float inputs:value = 20
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-662.8281, 303.51953)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "Multiply"
+        {
+            uniform token info:id = "ND_multiply_float"
+            float inputs:in1.connect = </Root/GrassMaterial/Separate3.outputs:outy>
+            float inputs:in2.connect = </Root/GrassMaterial/WaveScale.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-514.41797, 236.42969)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "Time"
+        {
+            uniform token info:id = "ND_time_float"
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-660.53125, 396.6914)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "TimeScale"
+        {
+            uniform token info:id = "ND_constant_float"
+            float inputs:value = 2
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-675.66797, 460.82422)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "Multiply_1"
+        {
+            uniform token info:id = "ND_multiply_float"
+            float inputs:in1.connect = </Root/GrassMaterial/Time.outputs:out>
+            float inputs:in2.connect = </Root/GrassMaterial/TimeScale.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-532.08203, 404.36328)
+            int ui:nodegraph:node:stackingOrder = 2852
+        }
+
+        def Shader "Add"
+        {
+            uniform token info:id = "ND_add_float"
+            float inputs:in1.connect = </Root/GrassMaterial/Multiply.outputs:out>
+            float inputs:in2.connect = </Root/GrassMaterial/Multiply_1.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-467.77344, 324.48047)
+            int ui:nodegraph:node:stackingOrder = 2852
         }
 
         def Shader "Sin"
@@ -85,105 +147,49 @@ def Xform "Root"
             uniform token info:id = "ND_sin_float"
             float inputs:in.connect = </Root/GrassMaterial/Add_1.outputs:out>
             float outputs:out
-            float2 ui:nodegraph:node:pos = (-725.5831, 225.15277)
-            float2 ui:nodegraph:node:size = (116, 40)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "Multiply"
-        {
-            uniform token info:id = "ND_multiply_float"
-            float inputs:in1.connect = </Root/GrassMaterial/Separate3.outputs:outy>
-            float inputs:in2 = 20
-            float inputs:in2.connect = </Root/GrassMaterial/WaveSacle.outputs:out>
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-999.90857, 161.83955)
-            float2 ui:nodegraph:node:size = (60, 36)
-            int ui:nodegraph:node:stackingOrder = 1440
-        }
-
-        def Shader "Multiply_1"
-        {
-            uniform token info:id = "ND_multiply_float"
-            float inputs:in1.connect = </Root/GrassMaterial/Multiply_3.outputs:out>
-            float inputs:in2 = 0.1
-            float inputs:in2.connect = </Root/GrassMaterial/MoveScale.outputs:out>
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-525.02374, 246.51953)
-            float2 ui:nodegraph:node:size = (60, 36)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "Time"
-        {
-            uniform token info:id = "ND_time_float"
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-1123.3203, 307.52734)
-            float2 ui:nodegraph:node:size = (122.5, 53)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "Add"
-        {
-            uniform token info:id = "ND_add_float"
-            float inputs:in1.connect = </Root/GrassMaterial/Multiply.outputs:out>
-            float inputs:in2.connect = </Root/GrassMaterial/Multiply_2.outputs:out>
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-905.10547, 202.09375)
-            float2 ui:nodegraph:node:size = (61.5, 36.5)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "Multiply_2"
-        {
-            uniform token info:id = "ND_multiply_float"
-            float inputs:in1.connect = </Root/GrassMaterial/Time.outputs:out>
-            float inputs:in2.connect = </Root/GrassMaterial/TimeScale.outputs:out>
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-995.34766, 316.70703)
-            float2 ui:nodegraph:node:size = (60, 36)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "WaveSacle"
-        {
-            uniform token info:id = "ND_constant_float"
-            float inputs:value = 20
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-1136.0977, 217.72656)
-            float2 ui:nodegraph:node:size = (152.5, 53)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "TimeScale"
-        {
-            uniform token info:id = "ND_constant_float"
-            float inputs:value = 3
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-1176.0703, 379.8828)
-            float2 ui:nodegraph:node:size = (149.5, 53)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-239.45605, 331.42856)
+            int ui:nodegraph:node:stackingOrder = 2738
         }
 
         def Shader "MoveScale"
         {
             uniform token info:id = "ND_constant_float"
-            float inputs:value = 0.1
+            float inputs:value = 0.01
             float outputs:out
-            float2 ui:nodegraph:node:pos = (-659.9961, 310.35156)
-            float2 ui:nodegraph:node:size = (152.5, 53)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-211.03516, 392.8047)
+            int ui:nodegraph:node:stackingOrder = 2807
+        }
+
+        def Shader "Multiply_2"
+        {
+            uniform token info:id = "ND_multiply_float"
+            float inputs:in1.connect = </Root/GrassMaterial/Multiply_3.outputs:out>
+            float inputs:in2.connect = </Root/GrassMaterial/MoveScale.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-57.69922, 312.04688)
+            int ui:nodegraph:node:stackingOrder = 2621
         }
 
         def Shader "Multiply_3"
         {
             uniform token info:id = "ND_multiply_float"
-            float inputs:in1.connect = </Root/GrassMaterial/Separate3.outputs:outy>
+            float inputs:in1.connect = </Root/GrassMaterial/Multiply.outputs:out>
             float inputs:in2.connect = </Root/GrassMaterial/Sin.outputs:out>
             float outputs:out
-            float2 ui:nodegraph:node:pos = (-627.8008, 165.01953)
-            float2 ui:nodegraph:node:size = (60, 36)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-143.72656, 246.15234)
+            int ui:nodegraph:node:stackingOrder = 2738
+        }
+
+        def Shader "Noise2D"
+        {
+            uniform token info:id = "ND_noise2d_float"
+            float inputs:amplitude = 3
+            float inputs:pivot
+            float2 inputs:texcoord.connect = </Root/GrassMaterial/Combine2.outputs:out>
+            float outputs:out
+            float2 ui:nodegraph:node:pos = (-314.01953, 501.72656)
+            int ui:nodegraph:node:stackingOrder = 2852
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:amplitude"]
         }
 
         def Shader "Combine2"
@@ -192,21 +198,9 @@ def Xform "Root"
             float inputs:in1.connect = </Root/GrassMaterial/Separate3.outputs:outx>
             float inputs:in2.connect = </Root/GrassMaterial/Separate3.outputs:outz>
             float2 outputs:out
-            float2 ui:nodegraph:node:pos = (-1173.8516, 513.5625)
-            float2 ui:nodegraph:node:size = (144.5, 53)
-            int ui:nodegraph:node:stackingOrder = 1437
-        }
-
-        def Shader "Noise2D"
-        {
-            uniform token info:id = "ND_noise2d_float"
-            float inputs:amplitude = 10
-            float inputs:pivot
-            prepend float2 inputs:texcoord.connect = </Root/GrassMaterial/Combine2.outputs:out>
-            float outputs:out
-            float2 ui:nodegraph:node:pos = (-957.9258, 481.48438)
-            float2 ui:nodegraph:node:size = (148.5, 145)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-469.55078, 535.8086)
+            int ui:nodegraph:node:stackingOrder = 2852
+            string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["inputs:in1"]
         }
 
         def Shader "Add_1"
@@ -215,20 +209,122 @@ def Xform "Root"
             float inputs:in1.connect = </Root/GrassMaterial/Add.outputs:out>
             float inputs:in2.connect = </Root/GrassMaterial/Noise2D.outputs:out>
             float outputs:out
-            float2 ui:nodegraph:node:pos = (-797.9844, 314.9414)
-            float2 ui:nodegraph:node:size = (61.5, 36.5)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (-374.4297, 332.125)
+            int ui:nodegraph:node:stackingOrder = 2852
         }
 
         def Shader "Multiply_4"
         {
             uniform token info:id = "ND_multiply_vector3FA"
-            float3 inputs:in1.connect = </Root/GrassMaterial.inputs:Wind>
-            prepend float inputs:in2.connect = </Root/GrassMaterial/Multiply_1.outputs:out>
+            prepend float3 inputs:in1.connect = </Root/GrassMaterial.inputs:Wind>
+            float inputs:in2.connect = </Root/GrassMaterial/Multiply_2.outputs:out>
             float3 outputs:out
-            float2 ui:nodegraph:node:pos = (-433.78125, 237.05078)
-            float2 ui:nodegraph:node:size = (60, 36)
-            int ui:nodegraph:node:stackingOrder = 1437
+            float2 ui:nodegraph:node:pos = (113.53125, 303.0078)
+            int ui:nodegraph:node:stackingOrder = 2798
+        }
+
+        def Shader "Add_2"
+        {
+            uniform token info:id = "ND_add_vector3"
+            float3 inputs:in1.connect = </Root/GrassMaterial/Multiply_4.outputs:out>
+            float3 inputs:in2.connect = </Root/GrassMaterial/HightMap.outputs:Combine3_out>
+            float3 outputs:out
+            float2 ui:nodegraph:node:pos = (190.93076, 308.17798)
+            int ui:nodegraph:node:stackingOrder = 3030
+        }
+
+        def NodeGraph "HightMap"
+        {
+            prepend float3 outputs:Combine3_out.connect = </Root/GrassMaterial/HightMap/Combine3.outputs:out>
+            float2 ui:nodegraph:node:pos = (-377.67987, 940.73004)
+            int ui:nodegraph:node:stackingOrder = 3034
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1710.7047, 62.294765)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 3448
+
+            def Shader "HightMap"
+            {
+                uniform token info:id = "ND_image_float"
+                float inputs:default
+                asset inputs:file = @Textures/hight_map.png@
+                string inputs:filtertype
+                float2 inputs:texcoord.connect = </Root/GrassMaterial/HightMap/Remap.outputs:out>
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (965.5, 200.5)
+                int ui:nodegraph:node:stackingOrder = 3356
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = ["outputs:out"]
+            }
+
+            def Shader "Remap"
+            {
+                uniform token info:id = "ND_remap_vector2"
+                float2 inputs:in.connect = </Root/GrassMaterial/HightMap/Combine2.outputs:out>
+                float2 inputs:outhigh = (0.5, 0.5)
+                float2 inputs:outlow = (-0.5, -0.5)
+                float2 outputs:out
+                float2 ui:nodegraph:node:pos = (758.8886, 235.01695)
+                int ui:nodegraph:node:stackingOrder = 3445
+            }
+
+            def Shader "HightScale"
+            {
+                uniform token info:id = "ND_constant_float"
+                float inputs:value = 0.1
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (974.3624, -42.87756)
+                int ui:nodegraph:node:stackingOrder = 3363
+            }
+
+            def Shader "Multiply_5"
+            {
+                uniform token info:id = "ND_multiply_float"
+                float inputs:in1.connect = </Root/GrassMaterial/HightMap/HightScale.outputs:out>
+                float inputs:in2.connect = </Root/GrassMaterial/HightMap/HightMap.outputs:out>
+                float outputs:out
+                float2 ui:nodegraph:node:pos = (1140.4296, 93.69535)
+                int ui:nodegraph:node:stackingOrder = 3390
+            }
+
+            def Shader "Combine3"
+            {
+                uniform token info:id = "ND_combine3_vector3"
+                float inputs:in1
+                float inputs:in2.connect = </Root/GrassMaterial/HightMap/Multiply_5.outputs:out>
+                float inputs:in3
+                float3 outputs:out
+                float2 ui:nodegraph:node:pos = (1261.9125, 92.0115)
+                int ui:nodegraph:node:stackingOrder = 3453
+            }
+
+            def Shader "Position"
+            {
+                uniform token info:id = "ND_position_vector3"
+                float3 outputs:out
+                float2 ui:nodegraph:node:pos = (440.17468, 78.95658)
+                int ui:nodegraph:node:stackingOrder = 3438
+            }
+
+            def Shader "Separate3"
+            {
+                uniform token info:id = "ND_separate3_vector3"
+                float3 inputs:in.connect = </Root/GrassMaterial/HightMap/Position.outputs:out>
+                float outputs:outx
+                float outputs:outy
+                float outputs:outz
+                float2 ui:nodegraph:node:pos = (595.48987, 78.67098)
+                int ui:nodegraph:node:stackingOrder = 3441
+            }
+
+            def Shader "Combine2"
+            {
+                uniform token info:id = "ND_combine2_vector2"
+                float inputs:in1.connect = </Root/GrassMaterial/HightMap/Separate3.outputs:outx>
+                float inputs:in2.connect = </Root/GrassMaterial/HightMap/Separate3.outputs:outz>
+                float2 outputs:out
+                float2 ui:nodegraph:node:pos = (752.9485, 79.02798)
+                int ui:nodegraph:node:stackingOrder = 3443
+            }
         }
     }
 
