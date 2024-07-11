@@ -1,0 +1,200 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["RightHand", "LeftHand", "Enemy", "Text", "Flame"]
+    def Xform "RightHand"
+    {
+        reorder nameChildren = ["Anchoring", "Sword"]
+        def Xform "Sword" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (1.2217306, -5.9604638e-8, 1.5707965)
+            }
+        )
+        {
+            reorder nameChildren = ["SwordModel", "Flame"]
+            quatf xformOp:orient = (0.5792279, 0.4055798, 0.40557984, 0.57922804)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (-0.06, -0.04, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "SwordModel" (
+                active = true
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                customData = {
+                    float3 rotationEulerHint = (-1.5707964, 0, 0)
+                }
+                references = @FlameSword.usdz@
+            )
+            {
+                reorder nameChildren = ["_materials", "geometry_0"]
+                rel material:binding = </Root/RightHand/Sword/SwordModel/_materials/Material_0> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (0, 0.2, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def "_materials" (
+                    active = true
+                    references = @FlameSword.usdz@</_materials>
+                )
+                {
+                }
+            }
+
+            def Xform "Flame"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (0, 0.3, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def RealityKitComponent "VFXEmitter"
+                {
+                    token info:id = "RealityKit.VFXEmitter"
+
+                    def RealityKitStruct "currentState"
+                    {
+                        token birthDirection = "Constant"
+                        token birthLocation = "Volume"
+                        token emitterShape = "Box"
+                        float particleSpeed = 0.2
+                        float particleSpeedVariation = 0.2
+                        float3 shapeSize = (0.02, 0.2, 0.04)
+
+                        def RealityKitStruct "mainEmitter"
+                        {
+                            float3 acceleration = (0, 0.5, 0)
+                            token animationRepeatMode = "PlayOnce"
+                            float birthRate = 5000
+                            token blendMode = "Additive"
+                            int64 columnCount = 4
+                            float4 endColorA = (1, 0.019407865, 0, 1)
+                            float frameRate = 0
+                            int64 initialFrame = 8
+                            int64 initialFrameVariation = 8
+                            bool isAnimated = 1
+                            float noiseAnimationSpeed = 100
+                            float noiseStrength = 0.1
+                            asset particleImage = @ParticleEmitterPresetTextures/dustsheet.exr@
+                            double particleLifeSpan = 0.2
+                            float particleSize = 0.04
+                            int64 rowCount = 4
+                            float sizeMultiplierAtEndOfLifespan = 0
+                            float sizeMultiplierAtEndOfLifespanPower = 5
+                            float4 startColorA = (0.9986901, 0.96745074, 0, 1)
+                            bool useEndColor = 1
+                            bool useEndColorRange = 0
+                            bool useStartColorRange = 0
+                        }
+
+                        def RealityKitStruct "spawnedEmitter"
+                        {
+                        }
+                    }
+                }
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            token chirality = "right"
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerMetacarpal"
+        }
+    }
+
+    def Xform "LeftHand"
+    {
+        reorder nameChildren = ["Anchoring", "Shield"]
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "Shield" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (-1.5707964, 0, 0)
+            }
+        )
+        {
+            quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0.09, 0.03, -2.7939677e-9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def "ShieldModel" (
+                active = true
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                customData = {
+                    float3 rotationEulerHint = (-4.7123885, -1.5707963, 0)
+                }
+                references = @FlameShield.usdz@
+            )
+            {
+                reorder nameChildren = ["_materials", "geometry_0"]
+                rel material:binding = </Root/LeftHand/Shield/ShieldModel/_materials/Material_0> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                quatf xformOp:orient = (0.5, -0.50000006, -0.49999997, -0.5)
+                float3 xformOp:scale = (0.65, 0.65, 0.65)
+                float3 xformOp:translate = (2.781974e-9, -6.4483427e-9, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def "_materials" (
+                    active = true
+                    references = @FlameShield.usdz@</_materials>
+                )
+                {
+                    over "Material_0"
+                    {
+                        token outputs:mtlx:surface
+                        token outputs:realitykit:vertex
+                    }
+                }
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerMetacarpal"
+        }
+    }
+
+    def "Enemy" (
+        customData = {
+            float3 rotationEulerHint = (0, 1.3962636, 0)
+        }
+        references = @Enemy.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.76604444, 0, 0.64278764, 0)
+        float3 xformOp:scale = (0.006, 0.006, 0.006)
+        float3 xformOp:translate = (-0.07485448, 0, -1.0131983)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Text" (
+        customData = {
+            float3 rotationEulerHint = (0.17453292, 1.626021e-8, -3.1415927)
+        }
+        prepend references = @Text.usdz@
+    )
+    {
+        quatf xformOp:orient = (4.425364e-8, -4.2894683e-9, 0.087155744, 0.9961947)
+        float3 xformOp:scale = (0.4, 0.4, 0.4)
+        float3 xformOp:translate = (-5.1688403e-8, 0.40548897, -0.4976613)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+

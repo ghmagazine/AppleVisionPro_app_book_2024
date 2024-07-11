@@ -1,0 +1,665 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["DrumKit", "RightHand", "LeftHand", "Audio"]
+    def "DrumKit" (
+        active = true
+        references = @DrumKit.usdz@
+    )
+    {
+        reorder nameChildren = ["geom", "Snare"]
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, -1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "Snare" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0.28256866, 0.47682387, 0.03385938)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/Snare/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.9624572, 0.13285403, 0.23608959, -0.016963895)
+            float3 xformOp:scale = (1.751, 0.6, 1.751)
+            float3 xformOp:translate = (-0.41147, 0.66606, 0.30745)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/DrumKit/Snare/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/Snare.m4a@
+                uniform bool shouldLoop = 0
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    float height = 0.2
+                    float radius = 0.1
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+        }
+
+        def Cylinder "Bass" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (1.6545953, -2.2263428e-7, -5.148412e-7)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/Bass/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.67686754, 0.7361048, -2.6483542e-7, -9.2298535e-8)
+            float3 xformOp:scale = (2.8955286, 0.9921857, 2.8955119)
+            float3 xformOp:translate = (-0.01573213, 0.32107145, 0.04127741)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/DrumKit/Bass/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/Bass.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "CrashCymbal" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0.55747414, 0.6563468, 0.23846969)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/CrashCymbal/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.9141834, 0.22174847, 0.3386563, 0.020205764)
+            float3 xformOp:scale = (2.0724826, 0.4, 2.072483)
+            float3 xformOp:translate = (-0.4805602, 1.0877154, -0.22156918)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/DrumKit/CrashCymbal/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/CrashCymbal.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "FloorTom" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0, -0.7676939, 0)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/FloorTom/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.92723083, 0, -0.37449032, 0)
+            float3 xformOp:scale = (1.9682811, 0.67445385, 1.9682695)
+            float3 xformOp:translate = (0.41800585, 0.62109125, 0.3263269)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/DrumKit/FloorTom/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/FloorTom.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "HiHat" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0, 1.2476082, 0)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/HiHat/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.81166226, 0, 0.584127, 0)
+            float3 xformOp:scale = (1.7999998, 0.39999995, 1.7999998)
+            float3 xformOp:translate = (-0.6531548, 0.91222394, 0.40475512)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/DrumKit/HiHat/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/HiHat.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "HiTom" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0, 0.4663704, 0)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/HiTom/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.9729353, 0, 0.2310777, 0)
+            float3 xformOp:scale = (1.2619407, 0.4324208, 1.2619405)
+            float3 xformOp:translate = (-0.25805128, 0.8874726, -0.044129133)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/DrumKit/HiTom/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/HiTom.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "MidTom" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0, -0.54670256, 0)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/MidTom/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.9628716, 0, -0.26995975, 0)
+            float3 xformOp:scale = (1.5090821, 0.5171071, 1.5090821)
+            float3 xformOp:translate = (0.2410764, 0.9095151, -0.026034594)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/DrumKit/MidTom/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/MidTom.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+
+        def Cylinder "RideCymbal" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0.3799149, 0.57179815, 0.63571584)
+            }
+        )
+        {
+            reorder nameChildren = ["DefaultMaterial", "Audio"]
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/DrumKit/RideCymbal/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (0.9115982, 0.08552327, 0.3196903, 0.24386999)
+            float3 xformOp:scale = (2, 0.40000004, 2)
+            float3 xformOp:translate = (0.49227563, 1.1520412, 0.23285526)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/DrumKit/RideCymbal/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitAudioFile "Audio"
+            {
+                uniform asset file = @DrumKitAudioFiles/RideCymbal.m4a@
+            }
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.2, 0.2, 0.2)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioSourceComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioSourceComponent"
+            }
+
+            def RealityKitComponent "HierarchicalFade"
+            {
+                uniform token info:id = "RealityKit.HierarchicalFade"
+                float opacity = 0
+            }
+        }
+    }
+
+    def Xform "RightHand" (
+        active = true
+    )
+    {
+        def "DrumStick" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -0.7504916, 0)
+            }
+            references = @DrumStick.usdz@
+        )
+        {
+            quatf xformOp:orient = (0.9304176, 0, -0.3665012, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (-0.16, -0.05, 0.09)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.014273491, 0.014273486, 0.4074526)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                        float3 position = (0.000013675541, -4.1909516e-9, 0.0043482184)
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioTriggerComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioTriggerComponent"
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            token chirality = "right"
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerMetacarpal"
+        }
+    }
+
+    def Xform "LeftHand" (
+        active = true
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "DrumStick" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (0, -2.3212879, 3.1415927)
+            }
+            references = @DrumStick.usdz@
+        )
+        {
+            quatf xformOp:orient = (-1.7429876e-8, 0.91706, 4.0085972e-8, 0.39874908)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0.16, 0.05, -0.09)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def RealityKitComponent "Collider"
+            {
+                uint group = 1
+                uniform token info:id = "RealityKit.Collider"
+                uint mask = 4294967295
+                token type = "Default"
+
+                def RealityKitStruct "Shape"
+                {
+                    float3 extent = (0.014273491, 0.014273486, 0.4074526)
+                    token shapeType = "Box"
+
+                    def RealityKitStruct "pose"
+                    {
+                        float3 position = (0.000013675541, -4.1909516e-9, 0.0043482184)
+                    }
+                }
+            }
+
+            def RealityKitCustomComponent "RealityKitContent_AudioTriggerComponent"
+            {
+                uniform token info:id = "RealityKitContent.AudioTriggerComponent"
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerMetacarpal"
+        }
+    }
+}
+
