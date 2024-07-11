@@ -1,0 +1,280 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Sun", "RightHand", "LeftHand", "RealityKitContent_CustomPhysicsSimulationComponent"]
+    def "Sun" (
+        active = true
+        references = @Sun.usdz@
+    )
+    {
+        reorder nameChildren = ["geom", "Flame"]
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 1.5, -0.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "Flame"
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def RealityKitComponent "VFXEmitter"
+            {
+                token info:id = "RealityKit.VFXEmitter"
+
+                def RealityKitStruct "currentState"
+                {
+                    token birthDirection = "Constant"
+                    token birthLocation = "Volume"
+                    token emitterShape = "Sphere"
+                    float particleSpeed = 0.2
+                    float particleSpeedVariation = 0.2
+                    float3 shapeSize = (0.1, 0.1, 0.1)
+
+                    def RealityKitStruct "mainEmitter"
+                    {
+                        float3 acceleration = (0, 0.5, 0)
+                        token animationRepeatMode = "PlayOnce"
+                        float birthRate = 5000
+                        token blendMode = "Additive"
+                        int64 columnCount = 4
+                        float4 endColorA = (1, 0.019407865, 0, 1)
+                        float frameRate = 0
+                        int64 initialFrame = 8
+                        int64 initialFrameVariation = 8
+                        bool isAnimated = 1
+                        float noiseAnimationSpeed = 100
+                        float noiseStrength = 0.1
+                        asset particleImage = @dustsheet.exr@
+                        double particleLifeSpan = 0.2
+                        float particleSize = 0.04
+                        int64 rowCount = 4
+                        float sizeMultiplierAtEndOfLifespan = 0
+                        float sizeMultiplierAtEndOfLifespanPower = 5
+                        float4 startColorA = (0.9986901, 0.96745074, 0, 1)
+                        bool useEndColor = 1
+                        bool useEndColorRange = 0
+                        bool useStartColorRange = 0
+                    }
+
+                    def RealityKitStruct "spawnedEmitter"
+                    {
+                    }
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.2, 0.2, 0.19999999)
+                float radius = 0.1
+                token shapeType = "Sphere"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (3.7252903e-8, 0, 4.8428774e-8)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            float angularDamping = 0
+            uniform token info:id = "RealityKit.RigidBody"
+            float linearDamping = 0.0022
+
+            def RealityKitStruct "massFrame"
+            {
+                float m_mass = 20
+
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 0.1
+                double restitution = 1
+                double staticFriction = 0.1
+            }
+        }
+    }
+
+    def RealityKitCustomComponent "RealityKitContent_CustomPhysicsSimulationComponent"
+    {
+        float3 gravity = (0, -1, 0)
+        uniform token info:id = "RealityKitContent.CustomPhysicsSimulationComponent"
+    }
+
+    def Xform "RightHand"
+    {
+        reorder nameChildren = ["RealityKitContent_HandTrackingComponent", "Collider", "RigidBody", "Cube"]
+        def Cube "Cube" (
+            active = false
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/RightHand/Cube/DefaultMaterial>
+            double size = 0.2
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 0.1, 1)
+            float3 xformOp:translate = (0, -0.005, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/RightHand/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.2, 0.020000001, 0.2)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, -0.005, 0)
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            uniform token info:id = "RealityKit.RigidBody"
+            token motionType = "Kinematic"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 0.5
+                double staticFriction = 0.5
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            token chirality = "right"
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerKnuckle"
+        }
+    }
+
+    def Xform "LeftHand" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["RealityKitContent_HandTrackingComponent", "Collider", "RigidBody", "Cube"]
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "Cube" (
+            active = false
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/LeftHand/Cube/DefaultMaterial>
+            double size = 0.2
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 0.1, 1)
+            float3 xformOp:translate = (0, 0.005, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:surface.connect = </Root/LeftHand/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+        }
+
+        def RealityKitComponent "RigidBody"
+        {
+            uniform token info:id = "RealityKit.RigidBody"
+            token motionType = "Kinematic"
+
+            def RealityKitStruct "massFrame"
+            {
+                def RealityKitStruct "m_pose"
+                {
+                }
+            }
+
+            def RealityKitStruct "material"
+            {
+                double dynamicFriction = 0.5
+                double staticFriction = 0.5
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.2, 0.020000001, 0.2)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 0.005, 0)
+                }
+            }
+        }
+
+        def RealityKitCustomComponent "RealityKitContent_HandTrackingComponent"
+        {
+            uniform token info:id = "RealityKitContent.HandTrackingComponent"
+            token jointName = "middleFingerKnuckle"
+        }
+    }
+}
+
