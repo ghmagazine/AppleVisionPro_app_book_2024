@@ -21,7 +21,7 @@
 		924740002C490A6F00CDD97E /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE12C490A6F00CDD97E /* MainWindow.swift */; };
 		924740012C490A6F00CDD97E /* ScriptItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE32C490A6F00CDD97E /* ScriptItemView.swift */; };
 		924740022C490A6F00CDD97E /* ScriptWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE42C490A6F00CDD97E /* ScriptWindow.swift */; };
-		924740032C490A6F00CDD97E /* SwiftUIWindowSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE62C490A6F00CDD97E /* SwiftUIWindowSample.swift */; };
+		924740032C490A6F00CDD97E /* SwiftUIWindowSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE62C490A6F00CDD97E /* SwiftUIWindowSampleApp.swift */; };
 		924740042C490A6F00CDD97E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE82C490A6F00CDD97E /* HomeScreen.swift */; };
 		924740052C490A6F00CDD97E /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FE92C490A6F00CDD97E /* MessageModel.swift */; };
 		924740062C490A6F00CDD97E /* PageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92473FEA2C490A6F00CDD97E /* PageType.swift */; };
@@ -47,7 +47,7 @@
 		92473FE12C490A6F00CDD97E /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		92473FE32C490A6F00CDD97E /* ScriptItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptItemView.swift; sourceTree = "<group>"; };
 		92473FE42C490A6F00CDD97E /* ScriptWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptWindow.swift; sourceTree = "<group>"; };
-		92473FE62C490A6F00CDD97E /* SwiftUIWindowSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIWindowSample.swift; sourceTree = "<group>"; };
+		92473FE62C490A6F00CDD97E /* SwiftUIWindowSampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIWindowSampleApp.swift; sourceTree = "<group>"; };
 		92473FE82C490A6F00CDD97E /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		92473FE92C490A6F00CDD97E /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		92473FEA2C490A6F00CDD97E /* PageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageType.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				92473FD82C490A6F00CDD97E /* InputWindow */,
 				92473FE22C490A6F00CDD97E /* MainWindow */,
 				92473FE52C490A6F00CDD97E /* ScriptWindow */,
-				92473FE62C490A6F00CDD97E /* SwiftUIWindowSample.swift */,
+				92473FE62C490A6F00CDD97E /* SwiftUIWindowSampleApp.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				92473FFF2C490A6F00CDD97E /* SettingPageView.swift in Sources */,
 				924740062C490A6F00CDD97E /* PageType.swift in Sources */,
 				924740022C490A6F00CDD97E /* ScriptWindow.swift in Sources */,
-				924740032C490A6F00CDD97E /* SwiftUIWindowSample.swift in Sources */,
+				924740032C490A6F00CDD97E /* SwiftUIWindowSampleApp.swift in Sources */,
 				92473FFC2C490A6F00CDD97E /* ProgramCollectionItemView.swift in Sources */,
 				92473FFE2C490A6F00CDD97E /* ProgramDetailPageView.swift in Sources */,
 				924740042C490A6F00CDD97E /* HomeScreen.swift in Sources */,
