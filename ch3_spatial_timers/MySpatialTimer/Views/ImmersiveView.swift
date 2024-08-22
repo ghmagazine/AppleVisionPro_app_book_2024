@@ -27,7 +27,6 @@ struct ImmersiveView: View {
                     }
                 }
             }
-
         } attachments: {
             ForEach(timerManager.timerModels) { timerModel in
                 Attachment(id: timerModel.id) {

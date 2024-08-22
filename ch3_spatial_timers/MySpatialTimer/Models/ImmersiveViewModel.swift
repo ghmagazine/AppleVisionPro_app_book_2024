@@ -9,6 +9,8 @@ class ImmersiveViewModel {
     private let rootEntity = Entity()
     private let arkitSession = ARKitSession()
     private let worldTracking = WorldTrackingProvider()
+
+    // 配置場所エンティティ
     private let placementLocation = Entity()
 
     private var anchoredObjects: [UUID: Entity] = [:]
@@ -42,17 +44,21 @@ class ImmersiveViewModel {
     }
 
     func addMarker() {
+        // タップ対象となる半透明の円盤を生成
         let entity = ModelEntity(
             mesh: .generateCylinder(height: 0.01, radius: 0.06),
             materials: [SimpleMaterial(color: .init(red: 0, green: 0, blue: 1, alpha: 0.5), isMetallic: false)]
         )
 
+        // タップ操作が反応するようInputTargetComponentとCollisionを設定
         entity.components.set(InputTargetComponent())
         entity.generateCollisionShapes(recursive: true)
 
+        // 円盤が90°こちらに向いた状態にするためクォータニオンで回転を指定
         let rotationQuaternionX = simd_quatf(angle: .pi / 2, axis: SIMD3<Float>(1, 0, 0))
         entity.orientation *= rotationQuaternionX
 
+        // 設置場所となるEntityに追加
         placementLocation.addChild(entity)
     }
 
@@ -64,14 +70,9 @@ class ImmersiveViewModel {
     }
 
     func addPlaceHolder(timerModel: TimerModel, attachToWorldAnchor: Bool) {
-        let entity = ModelEntity(
-            mesh: .generateSphere(radius: 0),
-            materials: [SimpleMaterial(color: .init(red: 1, green: 1, blue: 1, alpha: 0), isMetallic: false)]
-        )
-
+        let entity = Entity()
         entity.name = timerModel.id.uuidString
         entity.transform = placementLocation.transform
-
         rootEntity.addChild(entity)
 
         if attachToWorldAnchor {
@@ -95,6 +96,7 @@ class ImmersiveViewModel {
     @MainActor
     func runARKitSession() async {
         do {
+            // WorldTrackingProviderを指定しARKitのセッションを開始
             try await arkitSession.run([worldTracking])
         } catch {
             return
@@ -143,10 +145,12 @@ class ImmersiveViewModel {
 
         placementLocation.isEnabled = appState?.isAppendMode ?? false
 
+        // 端末の位置と向きを取得
         let deviceAnchor = worldTracking.queryDeviceAnchor(atTimestamp: CACurrentMediaTime())
 
         guard let deviceAnchor, deviceAnchor.isTracked else { return }
 
+        // カメラ位置前方0.5メートルの位置を取得
         let matrix = deviceAnchor.originFromAnchorTransform
         let forward = simd_float3(0, 0, -1)
         let cameraForward = simd_act(matrix.rotation, forward)
@@ -155,6 +159,7 @@ class ImmersiveViewModel {
         let length: Float = 0.5
         let offset = length * simd_normalize(front)
 
+        // 配置場所エンティティに位置と回転情報を反映
         placementLocation.position = matrix.position + offset
         placementLocation.orientation = matrix.rotation
     }
@@ -241,15 +246,16 @@ extension ImmersiveViewModel {
                 return
             }
 
-            // Sleep for 1 s / hz before calling the function.
+            // 処理呼び出し前に 1秒/周波数 スリープする
             let nanoSecondsToSleep: UInt64 = NSEC_PER_SEC / hz
             do {
                 try await Task.sleep(nanoseconds: nanoSecondsToSleep)
             } catch {
-                // Sleep fails when the Task is cancelled. Exit the loop.
+                // タスクをキャンセルされた場合スリープは失敗する。ループを抜ける。
                 return
             }
 
+            // 処理を実行
             await function()
         }
     }

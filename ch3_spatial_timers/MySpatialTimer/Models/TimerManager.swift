@@ -106,7 +106,7 @@ class TimerManager {
         guard !timers.keys.contains(timerModel.id.uuidString) else { return }
 
         if timerModel.isNotificationOn {
-            self.sendNotificationRequest(id: timerModel.id, title: "Notification", second: timerModel.duration)
+            sendNotificationRequest(id: timerModel.id, title: "Notification", second: timerModel.duration)
         }
 
         let step = 1.0 / 60.0

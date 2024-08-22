@@ -16,7 +16,7 @@
 		8E622B6B2BA6018500032515 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B6A2BA6018500032515 /* Utilities.swift */; };
 		8E622B6D2BA60C3900032515 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B6C2BA60C3900032515 /* TimerModel.swift */; };
 		8E622B6F2BA60DC500032515 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B6E2BA60DC500032515 /* TimerManager.swift */; };
-		8E622B712BA6110000032515 /* TImerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B702BA6110000032515 /* TImerView.swift */; };
+		8E622B712BA6110000032515 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B702BA6110000032515 /* TimerView.swift */; };
 		8E622B732BA6113000032515 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B722BA6113000032515 /* PickerView.swift */; };
 		8E622B752BA6C99D00032515 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E622B742BA6C99D00032515 /* AppState.swift */; };
 		8EF1986B2BF141FD0092DE75 /* ForegroundNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1986A2BF141FD0092DE75 /* ForegroundNotification.swift */; };
@@ -34,7 +34,7 @@
 		8E622B6A2BA6018500032515 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8E622B6C2BA60C3900032515 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8E622B6E2BA60DC500032515 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
-		8E622B702BA6110000032515 /* TImerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImerView.swift; sourceTree = "<group>"; };
+		8E622B702BA6110000032515 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		8E622B722BA6113000032515 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		8E622B742BA6C99D00032515 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8EF1986A2BF141FD0092DE75 /* ForegroundNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundNotification.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			children = (
 				8E622B592BA5EA7A00032515 /* ContentView.swift */,
 				8E622B5B2BA5EA7A00032515 /* ImmersiveView.swift */,
-				8E622B702BA6110000032515 /* TImerView.swift */,
+				8E622B702BA6110000032515 /* TimerView.swift */,
 				8E622B722BA6113000032515 /* PickerView.swift */,
 			);
 			path = Views;
@@ -193,7 +193,7 @@
 				8E622B6B2BA6018500032515 /* Utilities.swift in Sources */,
 				8E622B6F2BA60DC500032515 /* TimerManager.swift in Sources */,
 				8EF1986B2BF141FD0092DE75 /* ForegroundNotification.swift in Sources */,
-				8E622B712BA6110000032515 /* TImerView.swift in Sources */,
+				8E622B712BA6110000032515 /* TimerView.swift in Sources */,
 				8E622B5C2BA5EA7A00032515 /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
