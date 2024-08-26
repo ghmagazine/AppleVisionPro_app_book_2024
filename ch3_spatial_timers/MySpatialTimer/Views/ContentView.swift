@@ -31,6 +31,9 @@ struct ContentView: View {
             }
             .disabled(!appState.immersiveSpaceOpened)
 
+#if targetEnvironment(simulator)
+            Text("現在シミュレータでは動作しません。\n対応お待ちください。")
+#else
             if !appState.immersiveSpaceOpened {
                 Button("Enter") {
                     Task {
@@ -54,6 +57,7 @@ struct ContentView: View {
                     }
                 }
             }
+#endif
         }
         .padding()
         .fixedSize()
